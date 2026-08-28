@@ -1,0 +1,1534 @@
+{
+  "generated_at": "2026-08-28T08:14:11Z",
+  "project": {
+    "configuration": {
+      "busy_timeout_ms": 5000,
+      "claim_lease_seconds": 7200,
+      "context_budget_bytes": 12000,
+      "legacy_review_days": {
+        "blocked": 7,
+        "in_progress": 3,
+        "planned": 3,
+        "stale": 3
+      },
+      "resource_lease_seconds": 300
+    },
+    "created_at": "2026-08-28T08:06:26Z",
+    "project_name": "numaBraid",
+    "project_uuid": "7efda1f1-7a8d-4c63-9e51-313690169d92",
+    "schema_version": 2
+  },
+  "project_revision": 17,
+  "schema_version": 2,
+  "snapshot_version": 3,
+  "tables": {
+    "barrier_requirements": [],
+    "barriers": [],
+    "checkpoint_gates": [],
+    "checkpoint_interfaces": [],
+    "checkpoints": [],
+    "decisions": [
+      {
+        "allowed_json": "[\"stock-nccl\", \"specialize-nccl\", \"custom-relay\"]",
+        "id": "forwarding-strategy",
+        "revision": 2,
+        "title": "Evidence-backed forwarding strategy",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "value_json": null
+      }
+    ],
+    "events": [
+      {
+        "actor_session_id": null,
+        "entity_id": "7efda1f1-7a8d-4c63-9e51-313690169d92",
+        "entity_type": "project",
+        "event_type": "project.bootstrapped",
+        "payload_json": "{\"project_name\": \"numaBraid\"}",
+        "revision": 1,
+        "seq": 1,
+        "timestamp": "2026-08-28T08:06:43Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "7efda1f1-7a8d-4c63-9e51-313690169d92",
+        "entity_type": "project",
+        "event_type": "plan.applied",
+        "payload_json": "{\"file\": \"/home/tumlinson/numaBraid/numabraid-bootstrap-plan.json\"}",
+        "revision": 2,
+        "seq": 2,
+        "timestamp": "2026-08-28T08:08:50Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "compat-v2-main",
+        "entity_type": "workflow_dispatch",
+        "event_type": "workflow.next_task",
+        "payload_json": "{\"lane_id\": \"compat-v2-main\", \"run_id\": \"compat-v2\", \"status\": \"claimed\", \"task_id\": \"NB-00\"}",
+        "revision": 3,
+        "seq": 3,
+        "timestamp": "2026-08-28T08:08:57Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "compat-v2-main",
+        "entity_type": "workflow_dispatch",
+        "event_type": "workflow.next_task",
+        "payload_json": "{\"lane_id\": \"compat-v2-main\", \"run_id\": \"compat-v2\", \"status\": \"resumed\", \"task_id\": \"NB-00\"}",
+        "revision": 4,
+        "seq": 4,
+        "timestamp": "2026-08-28T08:14:06Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-BUILD",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-BUILD\"}",
+        "revision": 5,
+        "seq": 5,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-BUILD",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 6,
+        "seq": 6,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-CONFIGURE",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-CONFIGURE\"}",
+        "revision": 7,
+        "seq": 7,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-CONFIGURE",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 8,
+        "seq": 8,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-DOCS",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-DOCS\"}",
+        "revision": 9,
+        "seq": 9,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-DOCS",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"71660c61-10e7-49a2-bdc2-11b7a3def266\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 10,
+        "seq": 10,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-HEADER",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-HEADER\"}",
+        "revision": 11,
+        "seq": 11,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-HEADER",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"18e77da5-5c70-4ae9-8017-c7ba090cabf1\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 12,
+        "seq": 12,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-MODULE",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-MODULE\"}",
+        "revision": 13,
+        "seq": 13,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-MODULE",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"93be574b-8db2-41f3-ac67-1a00f29a168e\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 14,
+        "seq": 14,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-TEST",
+        "entity_type": "gate",
+        "event_type": "gate.started",
+        "payload_json": "{\"gate_id\": \"NB-00-TEST\"}",
+        "revision": 15,
+        "seq": 15,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00-TEST",
+        "entity_type": "gate",
+        "event_type": "gate.completed",
+        "payload_json": "{\"evidence_id\": \"a5b28a18-e895-496a-953e-0d5314d99822\", \"status\": \"passed\", \"valid\": true}",
+        "revision": 16,
+        "seq": 16,
+        "timestamp": "2026-08-28T08:14:11Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-00",
+        "entity_type": "task",
+        "event_type": "task.completed",
+        "payload_json": "{\"completion_revision\": 17, \"disposition\": \"implemented\", \"reached_checkpoints\": []}",
+        "revision": 17,
+        "seq": 17,
+        "timestamp": "2026-08-28T08:14:11Z"
+      }
+    ],
+    "evidence": [
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-HEADER",
+        "id": "18e77da5-5c70-4ae9-8017-c7ba090cabf1",
+        "kind": "file_exists",
+        "metadata_json": "{\"exists\": true, \"input_fingerprint\": \"b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321\", \"inputs\": {\"command_contract\": {\"path\": \"include/numabraid/numabraid.hh\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"include/numabraid/numabraid.hh\", \"resources\": [], \"started_revision\": 11}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/18e77da5-5c70-4ae9-8017-c7ba090cabf1",
+        "revision": 12,
+        "status": "passed"
+      },
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-DOCS",
+        "id": "71660c61-10e7-49a2-bdc2-11b7a3def266",
+        "kind": "file_exists",
+        "metadata_json": "{\"exists\": true, \"input_fingerprint\": \"19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6\", \"inputs\": {\"command_contract\": {\"path\": \"AGENTS.md\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"AGENTS.md\", \"resources\": [], \"started_revision\": 9}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/71660c61-10e7-49a2-bdc2-11b7a3def266",
+        "revision": 10,
+        "status": "passed"
+      },
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-BUILD",
+        "id": "7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2",
+        "kind": "command",
+        "metadata_json": "{\"argv\": [\"cmake\", \"--build\", \"build/bootstrap\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173\", \"inputs\": {\"command_contract\": {\"argv\": [\"cmake\", \"--build\", \"build/bootstrap\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 5}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2",
+        "revision": 6,
+        "status": "passed"
+      },
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-MODULE",
+        "id": "93be574b-8db2-41f3-ac67-1a00f29a168e",
+        "kind": "file_exists",
+        "metadata_json": "{\"exists\": true, \"input_fingerprint\": \"9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912\", \"inputs\": {\"command_contract\": {\"path\": \"modules/numabraid.cppm\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"modules/numabraid.cppm\", \"resources\": [], \"started_revision\": 13}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/93be574b-8db2-41f3-ac67-1a00f29a168e",
+        "revision": 14,
+        "status": "passed"
+      },
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-TEST",
+        "id": "a5b28a18-e895-496a-953e-0d5314d99822",
+        "kind": "command",
+        "metadata_json": "{\"argv\": [\"ctest\", \"--test-dir\", \"build/bootstrap\", \"--output-on-failure\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09\", \"inputs\": {\"command_contract\": {\"argv\": [\"ctest\", \"--test-dir\", \"build/bootstrap\", \"--output-on-failure\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 15}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/a5b28a18-e895-496a-953e-0d5314d99822",
+        "revision": 16,
+        "status": "passed"
+      },
+      {
+        "checkpoint_id": null,
+        "claim_id": null,
+        "content_hash": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "gate_id": "NB-00-CONFIGURE",
+        "id": "b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07",
+        "kind": "command",
+        "metadata_json": "{\"argv\": [\"cmake\", \"-S\", \".\", \"-B\", \"build/bootstrap\", \"-DNUMABRAID_BUILD_TESTS=ON\", \"-DNUMABRAID_BUILD_BENCHMARKS=OFF\", \"-DNUMABRAID_BUILD_MODULES=OFF\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70\", \"inputs\": {\"command_contract\": {\"argv\": [\"cmake\", \"-S\", \".\", \"-B\", \"build/bootstrap\", \"-DNUMABRAID_BUILD_TESTS=ON\", \"-DNUMABRAID_BUILD_BENCHMARKS=OFF\", \"-DNUMABRAID_BUILD_MODULES=OFF\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 7}",
+        "path": "/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07",
+        "revision": 8,
+        "status": "passed"
+      }
+    ],
+    "gates": [
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"argv\": [\"cmake\", \"--build\", \"build/bootstrap\"], \"input_paths\": [\"CMakeLists.txt\", \"include\", \"tests\"]}",
+        "id": "NB-00-BUILD",
+        "input_fingerprint": "155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 6,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "command",
+        "valid": 1
+      },
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"argv\": [\"cmake\", \"-S\", \".\", \"-B\", \"build/bootstrap\", \"-DNUMABRAID_BUILD_TESTS=ON\", \"-DNUMABRAID_BUILD_BENCHMARKS=OFF\", \"-DNUMABRAID_BUILD_MODULES=OFF\"], \"input_paths\": [\"CMakeLists.txt\", \"include\", \"tests\"]}",
+        "id": "NB-00-CONFIGURE",
+        "input_fingerprint": "83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 8,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "command",
+        "valid": 1
+      },
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"path\": \"AGENTS.md\"}",
+        "id": "NB-00-DOCS",
+        "input_fingerprint": "19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 10,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "file_exists",
+        "valid": 1
+      },
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"path\": \"include/numabraid/numabraid.hh\"}",
+        "id": "NB-00-HEADER",
+        "input_fingerprint": "b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 12,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "file_exists",
+        "valid": 1
+      },
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"path\": \"modules/numabraid.cppm\"}",
+        "id": "NB-00-MODULE",
+        "input_fingerprint": "9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 14,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "file_exists",
+        "valid": 1
+      },
+      {
+        "checkpoint_id": null,
+        "config_json": "{\"argv\": [\"ctest\", \"--test-dir\", \"build/bootstrap\", \"--output-on-failure\"], \"input_paths\": [\"CMakeLists.txt\", \"include\", \"tests\"]}",
+        "id": "NB-00-TEST",
+        "input_fingerprint": "fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09",
+        "last_run_at": "2026-08-28T08:14:11Z",
+        "required": 1,
+        "revision": 16,
+        "status": "passed",
+        "task_id": "NB-00",
+        "type": "command",
+        "valid": 1
+      }
+    ],
+    "handoffs": [
+      {
+        "claim_id": null,
+        "created_at": "2026-08-28T08:14:11Z",
+        "id": "4efd8574-9b4d-45de-aad0-d9a1839bbafd",
+        "kind": "complete",
+        "note": "Bootstrap docs, CMake/header/module scaffolding, todo ledger, header smoke test, CUDA/NCCL discovery, and direct GCC module import smoke validation completed.",
+        "payload_json": "{\"changed_owned_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\"], \"checkpoints\": [], \"completion_commit\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\", \"completion_gates\": [{\"evidence_id\": \"7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2\", \"evidence_revision\": 6, \"id\": \"NB-00-BUILD\", \"input_fingerprint\": \"155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, {\"evidence_id\": \"b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07\", \"evidence_revision\": 8, \"id\": \"NB-00-CONFIGURE\", \"input_fingerprint\": \"83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, {\"evidence_id\": \"71660c61-10e7-49a2-bdc2-11b7a3def266\", \"evidence_revision\": 10, \"id\": \"NB-00-DOCS\", \"input_fingerprint\": \"19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, {\"evidence_id\": \"18e77da5-5c70-4ae9-8017-c7ba090cabf1\", \"evidence_revision\": 12, \"id\": \"NB-00-HEADER\", \"input_fingerprint\": \"b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, {\"evidence_id\": \"93be574b-8db2-41f3-ac67-1a00f29a168e\", \"evidence_revision\": 14, \"id\": \"NB-00-MODULE\", \"input_fingerprint\": \"9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, {\"evidence_id\": \"a5b28a18-e895-496a-953e-0d5314d99822\", \"evidence_revision\": 16, \"id\": \"NB-00-TEST\", \"input_fingerprint\": \"fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09\", \"status\": \"passed\", \"valid\": true, \"validation_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}], \"completion_revision\": 17, \"finalized_checkpoints\": [], \"gates\": [{\"id\": \"NB-00-DOCS\", \"input_fingerprint\": \"19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 10, \"status\": \"passed\", \"valid\": 1}, {\"id\": \"NB-00-HEADER\", \"input_fingerprint\": \"b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 12, \"status\": \"passed\", \"valid\": 1}, {\"id\": \"NB-00-MODULE\", \"input_fingerprint\": \"9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 14, \"status\": \"passed\", \"valid\": 1}, {\"id\": \"NB-00-CONFIGURE\", \"input_fingerprint\": \"83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 8, \"status\": \"passed\", \"valid\": 1}, {\"id\": \"NB-00-BUILD\", \"input_fingerprint\": \"155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 6, \"status\": \"passed\", \"valid\": 1}, {\"id\": \"NB-00-TEST\", \"input_fingerprint\": \"fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09\", \"last_run_at\": \"2026-08-28T08:14:11Z\", \"revision\": 16, \"status\": \"passed\", \"valid\": 1}], \"git_diffstat\": \"\", \"git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\", \"interfaces\": [], \"note\": \"Bootstrap docs, CMake/header/module scaffolding, todo ledger, header smoke test, CUDA/NCCL discovery, and direct GCC module import smoke validation completed.\", \"resources\": [], \"task_id\": \"NB-00\"}",
+        "revision": 17,
+        "task_id": "NB-00"
+      }
+    ],
+    "interface_consumers": [],
+    "interfaces": [],
+    "invariants": [
+      {
+        "enforcement": null,
+        "id": "empirical-performance",
+        "rule": "Performance claims require recorded topology, software versions, baselines, and before/after measurements; serious profiling uses the installed CUDA skill.",
+        "scope_json": "{}",
+        "severity": "error"
+      },
+      {
+        "enforcement": null,
+        "id": "evidence-before-forwarding",
+        "rule": "Do not implement or optimize a custom forwarding primitive before topology, transport baselines, and stock NCCL behavior provide measured evidence.",
+        "scope_json": "{}",
+        "severity": "error"
+      },
+      {
+        "enforcement": null,
+        "id": "narrow-x-topology",
+        "rule": "Keep numaBraid specific to the present CUDA, NCCL, GPU P2P, NVLink, PCIe, dual-NUMA four-GPU X topology; do not introduce generic fabric, endpoint, router, FPGA, or hypothetical-hardware abstractions.",
+        "scope_json": "{}",
+        "severity": "error"
+      },
+      {
+        "enforcement": null,
+        "id": "nccl-first",
+        "rule": "Measure and characterize stock NCCL before implementing a custom relay; use NCCL when it already provides the required semantics near physical-link speed.",
+        "scope_json": "{}",
+        "severity": "error"
+      },
+      {
+        "enforcement": null,
+        "id": "payload-avoids-host-inter-socket",
+        "rule": "For an optimized forwarding path with an available local-GPU to NVLink route, payload data must not traverse the CPU inter-socket link; fallbacks must be explicit and must not masquerade as optimized.",
+        "scope_json": "{}",
+        "severity": "error"
+      }
+    ],
+    "live_recovery_audit": [],
+    "migration_warnings": [],
+    "named_locks": [
+      {
+        "capacity": 1,
+        "metadata_json": "{}",
+        "name": "build-manifest"
+      }
+    ],
+    "ownership_scopes": [
+      {
+        "mode": "exclusive",
+        "path": ".gitignore",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": ".todo-orchestrator",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "AGENTS.md",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "README.md",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "docs",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "include",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "modules",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "tests",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "todo-status.md",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "todos.md",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "read",
+        "path": "LICENSE",
+        "task_id": "NB-00"
+      },
+      {
+        "mode": "exclusive",
+        "path": "src/topology",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "exclusive",
+        "path": "tests/topology",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "read",
+        "path": "AGENTS.md",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "read",
+        "path": "docs/topology.md",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "read",
+        "path": "include",
+        "task_id": "NB-01"
+      },
+      {
+        "mode": "exclusive",
+        "path": "bench/transport",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "exclusive",
+        "path": "src/benchmark",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "read",
+        "path": "AGENTS.md",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "read",
+        "path": "docs/performance.md",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "read",
+        "path": "docs/topology.md",
+        "task_id": "NB-02"
+      },
+      {
+        "mode": "exclusive",
+        "path": "bench/nccl",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "exclusive",
+        "path": "docs/nccl.md",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "read",
+        "path": "AGENTS.md",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "read",
+        "path": "docs/architecture.md",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "read",
+        "path": "docs/performance.md",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "read",
+        "path": "docs/topology.md",
+        "task_id": "NB-03"
+      },
+      {
+        "mode": "exclusive",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "exclusive",
+        "path": "include",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "exclusive",
+        "path": "modules",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "exclusive",
+        "path": "src/public",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "exclusive",
+        "path": "tests/compile",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "read",
+        "path": "AGENTS.md",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "read",
+        "path": "README.md",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "read",
+        "path": "docs/development.md",
+        "task_id": "NB-04"
+      },
+      {
+        "mode": "exclusive",
+        "path": "docs/forwarding-strategy.md",
+        "task_id": "NB-05"
+      },
+      {
+        "mode": "read",
+        "path": "bench",
+        "task_id": "NB-05"
+      },
+      {
+        "mode": "read",
+        "path": "docs",
+        "task_id": "NB-05"
+      },
+      {
+        "mode": "exclusive",
+        "path": "src/forwarding",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "exclusive",
+        "path": "tests/forwarding",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "read",
+        "path": "bench",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "read",
+        "path": "docs",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "read",
+        "path": "include",
+        "task_id": "NB-06"
+      },
+      {
+        "mode": "exclusive",
+        "path": "bench/forwarding",
+        "task_id": "NB-07"
+      },
+      {
+        "mode": "exclusive",
+        "path": "src/forwarding",
+        "task_id": "NB-07"
+      },
+      {
+        "mode": "exclusive",
+        "path": "tests/forwarding",
+        "task_id": "NB-07"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-07"
+      },
+      {
+        "mode": "read",
+        "path": "bench",
+        "task_id": "NB-07"
+      },
+      {
+        "mode": "read",
+        "path": "docs",
+        "task_id": "NB-07"
+      }
+    ],
+    "resource_classes": [],
+    "resource_instances": [],
+    "resource_requests": [],
+    "task_artifacts": [],
+    "task_completion_gates": [
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2",
+        "evidence_revision": 6,
+        "gate_id": "NB-00-BUILD",
+        "input_fingerprint": "155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"command\", \"evidence_metadata\": {\"argv\": [\"cmake\", \"--build\", \"build/bootstrap\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"155bc77fde9fc32c48c37f7a06d5e6305146bc7b41dec03adbcd5c98c17e0173\", \"inputs\": {\"command_contract\": {\"argv\": [\"cmake\", \"--build\", \"build/bootstrap\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 5}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/7f40ac49-c76f-4bfa-bb14-6aa6d49ff4e2\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      },
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07",
+        "evidence_revision": 8,
+        "gate_id": "NB-00-CONFIGURE",
+        "input_fingerprint": "83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"command\", \"evidence_metadata\": {\"argv\": [\"cmake\", \"-S\", \".\", \"-B\", \"build/bootstrap\", \"-DNUMABRAID_BUILD_TESTS=ON\", \"-DNUMABRAID_BUILD_BENCHMARKS=OFF\", \"-DNUMABRAID_BUILD_MODULES=OFF\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"83f0bfc06da40af19ff62bca19dea3aca4aa2b044e8622c9b56c7ae6b18fad70\", \"inputs\": {\"command_contract\": {\"argv\": [\"cmake\", \"-S\", \".\", \"-B\", \"build/bootstrap\", \"-DNUMABRAID_BUILD_TESTS=ON\", \"-DNUMABRAID_BUILD_BENCHMARKS=OFF\", \"-DNUMABRAID_BUILD_MODULES=OFF\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 7}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/b20e0b2c-09eb-4c7e-aa6b-65e85db9ba07\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      },
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "71660c61-10e7-49a2-bdc2-11b7a3def266",
+        "evidence_revision": 10,
+        "gate_id": "NB-00-DOCS",
+        "input_fingerprint": "19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"file_exists\", \"evidence_metadata\": {\"exists\": true, \"input_fingerprint\": \"19e7e368f2c7e6be2df10f751840680f4c3d68bc91dd7eff9dbd07987560cda6\", \"inputs\": {\"command_contract\": {\"path\": \"AGENTS.md\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"AGENTS.md\", \"resources\": [], \"started_revision\": 9}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/71660c61-10e7-49a2-bdc2-11b7a3def266\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      },
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "18e77da5-5c70-4ae9-8017-c7ba090cabf1",
+        "evidence_revision": 12,
+        "gate_id": "NB-00-HEADER",
+        "input_fingerprint": "b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"file_exists\", \"evidence_metadata\": {\"exists\": true, \"input_fingerprint\": \"b34f582d49200c199dae8495a8b22a9cf6e3b243a0e1f020e253e3985dc34321\", \"inputs\": {\"command_contract\": {\"path\": \"include/numabraid/numabraid.hh\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"include/numabraid/numabraid.hh\", \"resources\": [], \"started_revision\": 11}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/18e77da5-5c70-4ae9-8017-c7ba090cabf1\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      },
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "93be574b-8db2-41f3-ac67-1a00f29a168e",
+        "evidence_revision": 14,
+        "gate_id": "NB-00-MODULE",
+        "input_fingerprint": "9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"file_exists\", \"evidence_metadata\": {\"exists\": true, \"input_fingerprint\": \"9a75da99315307f5e0f3c60490a6e52a6bbb0ab20b7a3f6d5f22851d28397912\", \"inputs\": {\"command_contract\": {\"path\": \"modules/numabraid.cppm\"}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"path\": \"modules/numabraid.cppm\", \"resources\": [], \"started_revision\": 13}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/93be574b-8db2-41f3-ac67-1a00f29a168e\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      },
+      {
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "evidence_id": "a5b28a18-e895-496a-953e-0d5314d99822",
+        "evidence_revision": 16,
+        "gate_id": "NB-00-TEST",
+        "input_fingerprint": "fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09",
+        "provenance_json": "{\"claim_id\": \"986a8f1b-a848-4716-b558-8113f8f515c4\", \"evidence_content_hash\": null, \"evidence_kind\": \"command\", \"evidence_metadata\": {\"argv\": [\"ctest\", \"--test-dir\", \"build/bootstrap\", \"--output-on-failure\"], \"environment\": {}, \"expected_exit_code\": 0, \"input_fingerprint\": \"fa3da641dc7b4c905ec574d4cad8a1bd810a16c7ffae9b32078d5403d61c6a09\", \"inputs\": {\"command_contract\": {\"argv\": [\"ctest\", \"--test-dir\", \"build/bootstrap\", \"--output-on-failure\"]}, \"diff_fingerprint\": \"01bafdf550b3df99c9ff8de26ab47816d015ee5037c5a64fa108de8e33e45b52\", \"dirty_paths\": [\".gitignore\", \".todo-orchestrator/project.json\", \".todo-orchestrator/state.snapshot.json\", \"AGENTS.md\", \"CMakeLists.txt\", \"README.md\", \"docs/architecture.md\", \"docs/development.md\", \"docs/performance.md\", \"docs/topology.md\", \"include/numabraid/numabraid.hh\", \"modules/numabraid.cppm\", \"tests/CMakeLists.txt\", \"tests/compile/header_smoke.cc\", \"tests/compile/module_smoke.cc\", \"todo-status.md\", \"todos.md\", \"todos/nb-00.md\", \"todos/nb-01.md\", \"todos/nb-02.md\", \"todos/nb-03.md\", \"todos/nb-04.md\", \"todos/nb-05.md\", \"todos/nb-06.md\", \"todos/nb-07.md\"], \"files\": [{\"path\": \"CMakeLists.txt\", \"sha256\": \"548a9e03b1e6f13929b463865ffcddd0834afa5493fdc0118763c32d532199f1\"}, {\"path\": \"include\", \"sha256\": \"missing\"}, {\"path\": \"tests\", \"sha256\": \"missing\"}], \"interfaces\": [], \"recorded_git_head\": \"4c314d09a28e7e4da7b8bdb805713914c5268d09\"}, \"locks\": [], \"resources\": [], \"returncode\": 0, \"started_revision\": 15}, \"evidence_path\": \"/home/tumlinson/numaBraid/.git/todo-orchestrator/7efda1f1-7a8d-4c63-9e51-313690169d92/evidence/a5b28a18-e895-496a-953e-0d5314d99822\", \"source\": \"completion_transaction\"}",
+        "status": "passed",
+        "task_id": "NB-00",
+        "valid": 1,
+        "validation_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09"
+      }
+    ],
+    "task_dependencies": [
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\"]}",
+        "decision_id": null,
+        "id": 1,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-00",
+        "task_id": "NB-01",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\"]}",
+        "decision_id": null,
+        "id": 2,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-00",
+        "task_id": "NB-02",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\"]}",
+        "decision_id": null,
+        "id": 3,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-00",
+        "task_id": "NB-03",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\"]}",
+        "decision_id": null,
+        "id": 4,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-00",
+        "task_id": "NB-04",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\", \"validated\"]}",
+        "decision_id": null,
+        "id": 5,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-01",
+        "task_id": "NB-05",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\", \"validated\"]}",
+        "decision_id": null,
+        "id": 6,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-02",
+        "task_id": "NB-05",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\", \"validated\"]}",
+        "decision_id": null,
+        "id": 7,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-03",
+        "task_id": "NB-05",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"validated\"]}",
+        "decision_id": null,
+        "id": 8,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-05",
+        "task_id": "NB-06",
+        "type": "task"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"operator\": \"equals\", \"value\": \"custom-relay\"}",
+        "decision_id": "forwarding-strategy",
+        "id": 9,
+        "interface_id": null,
+        "prerequisite_task_id": null,
+        "task_id": "NB-06",
+        "type": "decision"
+      },
+      {
+        "barrier_id": null,
+        "checkpoint_id": null,
+        "condition_json": "{\"dispositions\": [\"implemented\", \"validated\"]}",
+        "decision_id": null,
+        "id": 10,
+        "interface_id": null,
+        "prerequisite_task_id": "NB-06",
+        "task_id": "NB-07",
+        "type": "task"
+      }
+    ],
+    "task_invariants": [
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-00"
+      },
+      {
+        "invariant_id": "evidence-before-forwarding",
+        "task_id": "NB-00"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-00"
+      },
+      {
+        "invariant_id": "nccl-first",
+        "task_id": "NB-00"
+      },
+      {
+        "invariant_id": "payload-avoids-host-inter-socket",
+        "task_id": "NB-00"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-01"
+      },
+      {
+        "invariant_id": "payload-avoids-host-inter-socket",
+        "task_id": "NB-01"
+      },
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-02"
+      },
+      {
+        "invariant_id": "evidence-before-forwarding",
+        "task_id": "NB-02"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-02"
+      },
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-03"
+      },
+      {
+        "invariant_id": "evidence-before-forwarding",
+        "task_id": "NB-03"
+      },
+      {
+        "invariant_id": "nccl-first",
+        "task_id": "NB-03"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-04"
+      },
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-05"
+      },
+      {
+        "invariant_id": "evidence-before-forwarding",
+        "task_id": "NB-05"
+      },
+      {
+        "invariant_id": "nccl-first",
+        "task_id": "NB-05"
+      },
+      {
+        "invariant_id": "payload-avoids-host-inter-socket",
+        "task_id": "NB-05"
+      },
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-06"
+      },
+      {
+        "invariant_id": "evidence-before-forwarding",
+        "task_id": "NB-06"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-06"
+      },
+      {
+        "invariant_id": "nccl-first",
+        "task_id": "NB-06"
+      },
+      {
+        "invariant_id": "payload-avoids-host-inter-socket",
+        "task_id": "NB-06"
+      },
+      {
+        "invariant_id": "empirical-performance",
+        "task_id": "NB-07"
+      },
+      {
+        "invariant_id": "narrow-x-topology",
+        "task_id": "NB-07"
+      },
+      {
+        "invariant_id": "payload-avoids-host-inter-socket",
+        "task_id": "NB-07"
+      }
+    ],
+    "task_locks": [
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-01"
+      },
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-02"
+      },
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-03"
+      },
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-04"
+      },
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-06"
+      },
+      {
+        "lock_name": "build-manifest",
+        "phase": "manual",
+        "task_id": "NB-07"
+      }
+    ],
+    "tasks": [
+      {
+        "attention_reason": null,
+        "completion_commit": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_git_head": "4c314d09a28e7e4da7b8bdb805713914c5268d09",
+        "completion_revision": 17,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-00",
+        "kind": "task",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "",
+        "objective": "Establish the compact repository, authoritative documentation, C++20 build skeleton, header compile smoke coverage, optional public module boundary, and todo-orchestrator foundation without implementing forwarding.",
+        "parallel_policy": "project_exclusive",
+        "parent_id": null,
+        "priority": 100,
+        "result": "implemented",
+        "result_policy_json": "{\"allowed_dispositions\": [\"implemented\", \"failed\"]}",
+        "revision": 17,
+        "status": "done",
+        "tags_json": "[]",
+        "title": "Repository bootstrap",
+        "updated_at": "2026-08-28T08:14:11Z",
+        "version": 3
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-01",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "Do not infer physical identity from CUDA ordinals. Validate PCI, NUMA, CUDA peer, and NVLink relationships at runtime.",
+        "objective": "Implement a small explicit probe for CUDA GPUs, PCI identities, NUMA locality, CUDA peer access, NVLink pairs, and the carrier relationships required by numaBraid, without building a generic graph framework.",
+        "parallel_policy": "parallel_safe",
+        "parent_id": null,
+        "priority": 90,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Discover and validate X topology",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-02",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "Record topology and software versions. Keep hardware benchmarks separate from ordinary compile/unit tests.",
+        "objective": "Build the minimal benchmark harness for local PCIe P2P, direct NVLink, cross-NUMA baseline, and relevant NCCL paths across transfer sizes and directions.",
+        "parallel_policy": "parallel_safe",
+        "parent_id": null,
+        "priority": 89,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Establish transport benchmark harness",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-03",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "Do not assume a custom relay is needed and do not replace NCCL without evidence.",
+        "objective": "Determine and measure how installed NCCL handles the X topology, including any intermediate-GPU or NVB-like forwarding, and answer whether it avoids host inter-socket payload traversal near bottleneck throughput.",
+        "parallel_policy": "parallel_safe",
+        "parent_id": null,
+        "priority": 88,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Characterize stock NCCL forwarding",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-04",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "Headers remain default. Modules remain opt-in, public-boundary-only, and must not force CUDA or downstream module adoption.",
+        "objective": "Refine the small header-first public boundary, optional module interface, library target, and consumer build integration without designing a forwarding API.",
+        "parallel_policy": "parallel_safe",
+        "parent_id": null,
+        "priority": 87,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Stabilize minimal public integration boundary",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-05",
+        "kind": "validation_task",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "Set the forwarding-strategy decision only from measured evidence. Downstream custom implementation remains inactive unless the value is custom-relay.",
+        "objective": "Use measured topology, transport, and NCCL evidence to select stock NCCL, narrow NCCL specialization, or a dedicated numaBraid relay.",
+        "parallel_policy": "serial",
+        "parent_id": null,
+        "priority": 70,
+        "result": null,
+        "result_policy_json": "{\"allowed_dispositions\": [\"validated\", \"failed\"]}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Forwarding strategy decision",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-06",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "",
+        "objective": "If and only if evidence selects a custom relay, implement the narrow X-path forwarding primitive for maximum throughput.",
+        "parallel_policy": "serial",
+        "parent_id": null,
+        "priority": 50,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Implement custom forwarding primitive",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": null,
+        "completion_git_head": null,
+        "completion_revision": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "NB-07",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "",
+        "objective": "Empirically tune chunking, staging, overlap, streams, events, and synchronization toward steady-state bottleneck-link throughput.",
+        "parallel_policy": "serial",
+        "parent_id": null,
+        "priority": 40,
+        "result": null,
+        "result_policy_json": "{}",
+        "revision": 2,
+        "status": "planned",
+        "tags_json": "[]",
+        "title": "Pipeline and tune forwarding",
+        "updated_at": "2026-08-28T08:08:50Z",
+        "version": 1
+      }
+    ],
+    "workflow_context_fragments": [
+      {
+        "content_hash": "a67be7cd027fdea81538adaf33a8bef859124fd17fd3254b40cec5aa231c8f00",
+        "content_json": "{\"authority\":\"server_enforced_role_and_task_scope\",\"interfaces\":[],\"ordered_tasks\":[\"NB-00\",\"NB-01\",\"NB-02\",\"NB-03\",\"NB-04\",\"NB-05\",\"NB-06\",\"NB-07\"],\"rendezvous\":[],\"role\":\"implementer\",\"workspace_mode\":\"exclusive\"}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:lane_brief:compat-v2-main:-:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "lane_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": null,
+        "version": 1
+      },
+      {
+        "content_hash": "b00aaea40eafa0e68ae10c03ca64c5181a5dd3ae22c3bda16e3491f48ff50b3d",
+        "content_json": "{\"acceptance_conditions\":[],\"boundaries\":[\"Compatibility run normalized from plan schema v2\"],\"glossary\":{\"lane\":\"single serial compatibility lane\"},\"invariants\":[],\"objective\":\"numaBraid\"}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:run_charter:-:-:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "run_charter",
+        "lane_id": null,
+        "owner_scope_json": "{\"run_id\":\"compat-v2\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": null,
+        "version": 1
+      },
+      {
+        "content_hash": "12995c5bd2ccbaef94afcfe0abf7e0a36ddb5752daeb47d2a1fc02bc08498552",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[\"NB-00-DOCS\",\"NB-00-HEADER\",\"NB-00-MODULE\",\"NB-00-CONFIGURE\",\"NB-00-BUILD\",\"NB-00-TEST\"],\"next_action\":\"Establish the compact repository, authoritative documentation, C++20 build skeleton, header compile smoke coverage, optional public module boundary, and todo-orchestrator foundation without implementing forwarding.\",\"objective\":\"Establish the compact repository, authoritative documentation, C++20 build skeleton, header compile smoke coverage, optional public module boundary, and todo-orchestrator foundation without implementing forwarding.\",\"scope\":{\"exclusive_paths\":[\"AGENTS.md\",\"README.md\",\"CMakeLists.txt\",\".gitignore\",\"include\",\"modules\",\"tests\",\"docs\",\".todo-orchestrator\",\"todo-status.md\",\"todos.md\"],\"read_paths\":[\"LICENSE\"]},\"tests\":[\"NB-00-DOCS\",\"NB-00-HEADER\",\"NB-00-MODULE\",\"NB-00-CONFIGURE\",\"NB-00-BUILD\",\"NB-00-TEST\"]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-00:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-00\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-00",
+        "version": 1
+      },
+      {
+        "content_hash": "7194db980de7ca5625d8bfe2c2550e8f0b548035f1d5468522ef3ca8e2f1afb5",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Implement a small explicit probe for CUDA GPUs, PCI identities, NUMA locality, CUDA peer access, NVLink pairs, and the carrier relationships required by numaBraid, without building a generic graph framework.\",\"objective\":\"Implement a small explicit probe for CUDA GPUs, PCI identities, NUMA locality, CUDA peer access, NVLink pairs, and the carrier relationships required by numaBraid, without building a generic graph framework.\",\"scope\":{\"exclusive_paths\":[\"src/topology\",\"tests/topology\"],\"read_paths\":[\"AGENTS.md\",\"docs/topology.md\",\"include\",\"CMakeLists.txt\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-01:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-01\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-01",
+        "version": 1
+      },
+      {
+        "content_hash": "304f9ee7dc6354087ca42c4a440dd405f108b9d6e5a2fe02345ef7d5a1ffc3e9",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Build the minimal benchmark harness for local PCIe P2P, direct NVLink, cross-NUMA baseline, and relevant NCCL paths across transfer sizes and directions.\",\"objective\":\"Build the minimal benchmark harness for local PCIe P2P, direct NVLink, cross-NUMA baseline, and relevant NCCL paths across transfer sizes and directions.\",\"scope\":{\"exclusive_paths\":[\"bench/transport\",\"src/benchmark\"],\"read_paths\":[\"AGENTS.md\",\"docs/performance.md\",\"docs/topology.md\",\"CMakeLists.txt\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-02:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-02\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-02",
+        "version": 1
+      },
+      {
+        "content_hash": "383af8a32845c7ca241b0df5129fe2a38cb4e84082852f33e4488ace7f7c75b7",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Determine and measure how installed NCCL handles the X topology, including any intermediate-GPU or NVB-like forwarding, and answer whether it avoids host inter-socket payload traversal near bottleneck throughput.\",\"objective\":\"Determine and measure how installed NCCL handles the X topology, including any intermediate-GPU or NVB-like forwarding, and answer whether it avoids host inter-socket payload traversal near bottleneck throughput.\",\"scope\":{\"exclusive_paths\":[\"bench/nccl\",\"docs/nccl.md\"],\"read_paths\":[\"AGENTS.md\",\"docs/architecture.md\",\"docs/performance.md\",\"docs/topology.md\",\"CMakeLists.txt\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-03:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-03\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-03",
+        "version": 1
+      },
+      {
+        "content_hash": "d319b12c5a858638c0dc409dc2c241fe37599ba3ce13341f341467e436a743cf",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Refine the small header-first public boundary, optional module interface, library target, and consumer build integration without designing a forwarding API.\",\"objective\":\"Refine the small header-first public boundary, optional module interface, library target, and consumer build integration without designing a forwarding API.\",\"scope\":{\"exclusive_paths\":[\"include\",\"modules\",\"src/public\",\"tests/compile\",\"CMakeLists.txt\"],\"read_paths\":[\"AGENTS.md\",\"README.md\",\"docs/development.md\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-04:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-04\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-04",
+        "version": 1
+      },
+      {
+        "content_hash": "7c3f9b59562388dc0956c3811da274a9e59990dc3352872814de567fb598a598",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Use measured topology, transport, and NCCL evidence to select stock NCCL, narrow NCCL specialization, or a dedicated numaBraid relay.\",\"objective\":\"Use measured topology, transport, and NCCL evidence to select stock NCCL, narrow NCCL specialization, or a dedicated numaBraid relay.\",\"scope\":{\"exclusive_paths\":[\"docs/forwarding-strategy.md\"],\"read_paths\":[\"docs\",\"bench\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-05:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-05\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-05",
+        "version": 1
+      },
+      {
+        "content_hash": "e50a167d8e5ed3e1b1a0f853dcc0db86ef78ad7ec385bd2569ecc2af033963bc",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"If and only if evidence selects a custom relay, implement the narrow X-path forwarding primitive for maximum throughput.\",\"objective\":\"If and only if evidence selects a custom relay, implement the narrow X-path forwarding primitive for maximum throughput.\",\"scope\":{\"exclusive_paths\":[\"src/forwarding\",\"tests/forwarding\"],\"read_paths\":[\"docs\",\"bench\",\"include\",\"CMakeLists.txt\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-06:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-06\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-06",
+        "version": 1
+      },
+      {
+        "content_hash": "6e592ff2cd7ab8feac91dfb829e3085c9bfc56500fcf98daf9a9d4cf38ac24c0",
+        "content_json": "{\"completion_contract\":null,\"forbidden_mutations\":[],\"gates\":[],\"next_action\":\"Empirically tune chunking, staging, overlap, streams, events, and synchronization toward steady-state bottleneck-link throughput.\",\"objective\":\"Empirically tune chunking, staging, overlap, streams, events, and synchronization toward steady-state bottleneck-link throughput.\",\"scope\":{\"exclusive_paths\":[\"src/forwarding\",\"bench/forwarding\",\"tests/forwarding\"],\"read_paths\":[\"docs\",\"bench\",\"CMakeLists.txt\"],\"shared_locks\":[\"build-manifest\"]},\"tests\":[]}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "id": "compat-v2:task_brief:compat-v2-main:NB-07:1",
+        "invalidated_at": null,
+        "invalidation_revision": null,
+        "kind": "task_brief",
+        "lane_id": "compat-v2-main",
+        "owner_scope_json": "{\"lane_id\":\"compat-v2-main\",\"run_id\":\"compat-v2\",\"task_id\":\"NB-07\"}",
+        "run_id": "compat-v2",
+        "superseded_by": null,
+        "task_id": "NB-07",
+        "version": 1
+      }
+    ],
+    "workflow_integration_queue": [],
+    "workflow_lane_tasks": [
+      {
+        "activated_at": "2026-08-28T08:08:57Z",
+        "completed_at": "2026-08-28T08:14:11Z",
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 0,
+        "revision": 17,
+        "state": "completed",
+        "task_id": "NB-00"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 1,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-01"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 2,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-02"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 3,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-03"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 4,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-04"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 5,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-05"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 6,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-06"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "enqueued_at": "2026-08-28T08:08:50Z",
+        "lane_id": "compat-v2-main",
+        "position": 7,
+        "revision": 2,
+        "state": "queued",
+        "task_id": "NB-07"
+      }
+    ],
+    "workflow_lanes": [
+      {
+        "context_cursor": 0,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "compat-v2-main",
+        "parent_lane_id": null,
+        "revision": 17,
+        "role": "implementer",
+        "run_id": "compat-v2",
+        "state": "ready",
+        "updated_at": "2026-08-28T08:14:11Z",
+        "workspace_mode": "exclusive"
+      }
+    ],
+    "workflow_message_receipts": [],
+    "workflow_message_recipients": [],
+    "workflow_messages": [],
+    "workflow_patch_artifacts": [],
+    "workflow_recovery_audit": [],
+    "workflow_rendezvous": [],
+    "workflow_rendezvous_arrivals": [],
+    "workflow_rendezvous_participants": [],
+    "workflow_run_charters": [
+      {
+        "content_hash": "b00aaea40eafa0e68ae10c03ca64c5181a5dd3ae22c3bda16e3491f48ff50b3d",
+        "content_json": "{\"acceptance_conditions\":[],\"boundaries\":[\"Compatibility run normalized from plan schema v2\"],\"glossary\":{\"lane\":\"single serial compatibility lane\"},\"invariants\":[],\"objective\":\"numaBraid\"}",
+        "created_at": "2026-08-28T08:08:50Z",
+        "creation_revision": 2,
+        "run_id": "compat-v2",
+        "superseded_at": null,
+        "superseded_revision": null,
+        "version": 1
+      }
+    ],
+    "workflow_runs": [
+      {
+        "active_charter_version": 1,
+        "completed_at": null,
+        "created_at": "2026-08-28T08:08:50Z",
+        "id": "compat-v2",
+        "revision": 2,
+        "root_task_id": "NB-00",
+        "status": "active",
+        "updated_at": "2026-08-28T08:08:50Z"
+      }
+    ],
+    "workflow_workspaces": []
+  },
+  "workflow_snapshot_version": 1
+}

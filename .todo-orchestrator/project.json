@@ -1,0 +1,18 @@
+{
+  "configuration": {
+    "busy_timeout_ms": 5000,
+    "claim_lease_seconds": 7200,
+    "context_budget_bytes": 12000,
+    "legacy_review_days": {
+      "blocked": 7,
+      "in_progress": 3,
+      "planned": 3,
+      "stale": 3
+    },
+    "resource_lease_seconds": 300
+  },
+  "created_at": "2026-08-28T08:06:26Z",
+  "project_name": "numaBraid",
+  "project_uuid": "7efda1f1-7a8d-4c63-9e51-313690169d92",
+  "schema_version": 2
+}

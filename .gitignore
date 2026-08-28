@@ -1,0 +1,15 @@
+# Out-of-tree CMake builds and generated build metadata.
+/build/
+/build-*/
+/cmake-build-*/
+/compile_commands.json
+/CMakeUserPresets.json
+
+# Todo-orchestrator transient runtime data. Project metadata and snapshots are
+# durable repository inputs; the authoritative SQLite database lives in .git.
+/.todo-orchestrator/runtime/
+
+# Editor and operating-system noise.
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb06-custom-relay-correctness-2026-08-29",
+  "recipe": "baseline",
+  "objective": "Validate exact bytes for the selected custom relay on all four X-topology diagonals",
+  "paths": [
+    "src/forwarding",
+    "tests/forwarding"
+  ],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206",
+      "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a"
+    ],
+    "gpus": 4,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 1,
+    "ram_bytes": 1073741824
+  },
+  "correctness_argv": [
+    "/tmp/numabraid-relay-hardware-test"
+  ],
+  "argv": [
+    "/tmp/numabraid-relay-hardware-test"
+  ],
+  "correctness_timeout": 900,
+  "timeout": 900,
+  "quiescence": {
+    "samples": 3,
+    "interval_seconds": 1,
+    "maximum_gpu_utilization_percent": 0
+  }
+}

@@ -1,0 +1,3 @@
+{"type":"metadata","schema":"numabraid-relay-bidirectional-v1","bandwidth_definition":"sum_of_two_one_way_payloads"}
+{"type":"measurement","first":"A0->B1","second":"B1->A0","bytes_each":268435456,"chunk_bytes":12582912,"buffers":2,"copies_per_trial":3,"trials":7,"median_us":52326.175000,"mean_us":52329.694381,"aggregate_payload_gbps":10.260083,"per_direction_effective_gbps":5.130042,"exact_bytes":true}
+{"type":"measurement","first":"B0->A1","second":"A1->B0","bytes_each":268435456,"chunk_bytes":12582912,"buffers":2,"copies_per_trial":3,"trials":7,"median_us":52320.501333,"mean_us":52322.011095,"aggregate_payload_gbps":10.261196,"per_direction_effective_gbps":5.130598,"exact_bytes":true}

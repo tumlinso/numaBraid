@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb07-relay-nsys-2026-08-29",
+  "recipe": "nsys",
+  "objective": "Capture CUDA API and GPU timeline evidence for the selected two-stage custom relay",
+  "paths": ["src/forwarding", "bench/forwarding", "tests/forwarding"],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206",
+      "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a"
+    ],
+    "gpus": 4,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 1,
+    "ram_bytes": 3221225472
+  },
+  "argv": [
+    "/tmp/numabraid-relay-benchmark",
+    "--trials", "1",
+    "--chunk-bytes", "12582912",
+    "--buffers", "2",
+    "--size-bytes", "268435456"
+  ],
+  "timeout": 1800,
+  "quiescence": {"samples": 3, "interval_seconds": 1, "maximum_gpu_utilization_percent": 0}
+}

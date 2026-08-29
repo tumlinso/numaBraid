@@ -1,0 +1,37 @@
+<system version="1">
+  <cpu host_hash="0x1dacae0402ce266" numaid="0" affinity="0000,0fffff00,000fffff" arch="x86_64" vendor="GenuineIntel" familyid="6" modelid="79">
+    <pci busid="0000:02:00.0" class="0x030200" vendor="0x10de" device="0x1db1" subsystem_vendor="0x10de" subsystem_device="0x1212" link_speed="8.0 GT/s PCIe" link_width="8">
+      <gpu dev="0" sm="70" rank="0" gdr="1">
+        <nvlink target="0000:83:00.0" count="6" tclass="0x030200"/>
+      </gpu>
+    </pci>
+    <nic>
+      <net name="tailscale0" dev="1" latency="0" speed="10000" port="0" guid="0x1" maxconn="65536" gdr="0"/>
+    </nic>
+    <pci busid="0000:03:00.0" class="0x030200" vendor="0x10de" device="0x1db1" subsystem_vendor="0x10de" subsystem_device="0x1212" link_speed="8.0 GT/s PCIe" link_width="8">
+      <gpu dev="1" sm="70" rank="2" gdr="1">
+        <nvlink target="0000:84:00.0" count="6" tclass="0x030200"/>
+      </gpu>
+    </pci>
+  </cpu>
+  <cpu host_hash="0x1dacae0402ce266" numaid="1" affinity="ffff,f00000ff,fff00000" arch="x86_64" vendor="GenuineIntel" familyid="6" modelid="79">
+    <pci busid="0000:85:00.0" class="0x028000" vendor="0x8086" device="0x2723" subsystem_vendor="0x8086" subsystem_device="0x0084" link_speed="5.0 GT/s PCIe" link_width="1">
+      <nic>
+        <net name="wls2" dev="0" latency="0" speed="10000" port="0" guid="0x0" maxconn="65536" gdr="0"/>
+      </nic>
+    </pci>
+    <pci busid="0000:83:00.0" class="0x030200" vendor="0x10de" device="0x1db1" subsystem_vendor="0x10de" subsystem_device="0x1212" link_speed="8.0 GT/s PCIe" link_width="8">
+      <gpu dev="2" sm="70" rank="1" gdr="1">
+        <nvlink target="0000:02:00.0" count="6" tclass="0x030200"/>
+      </gpu>
+    </pci>
+    <nic>
+      <net name="tailscale0" dev="1" latency="0" speed="10000" port="0" guid="0x1" maxconn="65536" gdr="0"/>
+    </nic>
+    <pci busid="0000:84:00.0" class="0x030200" vendor="0x10de" device="0x1db1" subsystem_vendor="0x10de" subsystem_device="0x1212" link_speed="8.0 GT/s PCIe" link_width="8">
+      <gpu dev="3" sm="70" rank="3" gdr="1">
+        <nvlink target="0000:03:00.0" count="6" tclass="0x030200"/>
+      </gpu>
+    </pci>
+  </cpu>
+</system>

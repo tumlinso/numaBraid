@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb02-nvidia-simplep2p-nvlink-diagnostic-2026-08-29",
+  "recipe": "baseline",
+  "objective": "Validate the A0-A1 NVLink pair with NVIDIA cuda-samples simpleP2P using only the two physical GPU UUIDs",
+  "paths": ["bench/transport"],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206"
+    ],
+    "gpus": 2,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 4
+  },
+  "argv": ["/tmp/nvidia-simpleP2P"],
+  "timeout": 600,
+  "quiescence": {
+    "samples": 3,
+    "interval_seconds": 1,
+    "maximum_gpu_utilization_percent": 0
+  }
+}

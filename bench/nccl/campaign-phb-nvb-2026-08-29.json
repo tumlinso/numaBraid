@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb03-nccl-phb-nvb-2026-08-29",
+  "recipe": "baseline",
+  "objective": "Test whether NCCL_P2P_LEVEL=PHB activates the NCCL-recognized intermediate-GPU NVB path",
+  "paths": ["bench/nccl", "docs/nccl.md"],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206",
+      "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a"
+    ],
+    "gpus": 4,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 4,
+    "ram_bytes": 2147483648
+  },
+  "correctness_argv": [
+    "/tmp/numabraid-nccl-sendrecv",
+    "--a0", "0000:02:00.0", "--a1", "0000:83:00.0",
+    "--b0", "0000:03:00.0", "--b1", "0000:84:00.0",
+    "--nvb-disable", "0", "--p2p-level", "PHB",
+    "--topology-dump", "/tmp/numabraid-nccl-phb-nvb.xml",
+    "--cross-only", "--validate-only"
+  ],
+  "argv": [
+    "/tmp/numabraid-nccl-sendrecv",
+    "--a0", "0000:02:00.0", "--a1", "0000:83:00.0",
+    "--b0", "0000:03:00.0", "--b1", "0000:84:00.0",
+    "--nvb-disable", "0", "--p2p-level", "PHB",
+    "--topology-dump", "/tmp/numabraid-nccl-phb-nvb.xml",
+    "--cross-only", "--trials", "7"
+  ],
+  "correctness_timeout": 900,
+  "timeout": 1800,
+  "quiescence": {"samples": 3, "interval_seconds": 1, "maximum_gpu_utilization_percent": 0}
+}

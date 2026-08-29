@@ -9,6 +9,8 @@ project(
 
 include(CTest)
 include(CheckLanguage)
+include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
 
 option(NUMABRAID_BUILD_TESTS "Build numaBraid non-hardware tests" "${BUILD_TESTING}")
 option(NUMABRAID_BUILD_BENCHMARKS "Build hardware-dependent benchmarks" OFF)
@@ -24,6 +26,31 @@ target_include_directories(
   numabraid
   INTERFACE
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+)
+
+install(
+  TARGETS numabraid
+  EXPORT numabraidTargets
+)
+install(
+  DIRECTORY include/
+  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+install(
+  EXPORT numabraidTargets
+  FILE numabraidConfig.cmake
+  NAMESPACE numabraid::
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/numabraid"
+)
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/numabraidConfigVersion.cmake"
+  VERSION "${PROJECT_VERSION}"
+  COMPATIBILITY SameMajorVersion
+)
+install(
+  FILES "${CMAKE_CURRENT_BINARY_DIR}/numabraidConfigVersion.cmake"
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/numabraid"
 )
 
 function(numabraid_enable_warnings target)
@@ -34,7 +61,12 @@ function(numabraid_enable_warnings target)
   if(MSVC)
     target_compile_options(${target} PRIVATE /W4)
   else()
-    target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(
+      ${target}
+      PRIVATE
+        "$<$<COMPILE_LANGUAGE:CXX>:-Wall;-Wextra;-Wpedantic>"
+        "$<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-Wall,-Wextra>"
+    )
   endif()
 endfunction()
 
@@ -50,8 +82,8 @@ if(NUMABRAID_ENABLE_CUDA)
 endif()
 
 if(NUMABRAID_ENABLE_NCCL)
-  find_path(NCCL_INCLUDE_DIR NAMES nccl.h HINTS ENV NCCL_ROOT PATH_SUFFIXES include)
-  find_library(NCCL_LIBRARY NAMES nccl HINTS ENV NCCL_ROOT PATH_SUFFIXES lib lib64)
+  find_path(NCCL_INCLUDE_DIR NAMES nccl.h HINTS "${NCCL_ROOT}" ENV NCCL_ROOT PATH_SUFFIXES include)
+  find_library(NCCL_LIBRARY NAMES nccl HINTS "${NCCL_ROOT}" ENV NCCL_ROOT PATH_SUFFIXES lib lib64)
   if(NOT NCCL_INCLUDE_DIR OR NOT NCCL_LIBRARY)
     message(FATAL_ERROR "NUMABRAID_ENABLE_NCCL=ON, but NCCL headers and library were not found; set NCCL_ROOT")
   endif()
@@ -87,5 +119,32 @@ if(NUMABRAID_BUILD_TESTS)
 endif()
 
 if(NUMABRAID_BUILD_BENCHMARKS)
-  message(STATUS "Benchmark infrastructure is reserved for NB-02; no benchmark targets exist yet")
+  if(NOT NUMABRAID_ENABLE_CUDA)
+    message(FATAL_ERROR "NUMABRAID_BUILD_BENCHMARKS=ON requires NUMABRAID_ENABLE_CUDA=ON")
+  endif()
+
+  add_library(numabraid_topology STATIC src/topology/x_topology.cc)
+  target_include_directories(numabraid_topology PUBLIC src/topology)
+  target_compile_features(numabraid_topology PUBLIC cxx_std_20)
+  numabraid_enable_warnings(numabraid_topology)
+
+  add_executable(numabraid_topology_probe src/topology/probe.cu)
+  find_library(NUMABRAID_NVML_LIBRARY NAMES nvidia-ml REQUIRED)
+  target_link_libraries(
+    numabraid_topology_probe
+    PRIVATE numabraid_topology "${NUMABRAID_NVML_LIBRARY}"
+  )
+  set_target_properties(numabraid_topology_probe PROPERTIES CUDA_ARCHITECTURES 70)
+  numabraid_enable_warnings(numabraid_topology_probe)
+
+  add_executable(numabraid_transport_benchmark bench/transport/transport_benchmark.cu)
+  set_target_properties(numabraid_transport_benchmark PROPERTIES CUDA_ARCHITECTURES 70)
+  numabraid_enable_warnings(numabraid_transport_benchmark)
+
+  if(TARGET numabraid::nccl)
+    add_executable(numabraid_nccl_sendrecv_benchmark bench/nccl/nccl_sendrecv_benchmark.cu)
+    target_link_libraries(numabraid_nccl_sendrecv_benchmark PRIVATE numabraid::nccl)
+    set_target_properties(numabraid_nccl_sendrecv_benchmark PROPERTIES CUDA_ARCHITECTURES 70)
+    numabraid_enable_warnings(numabraid_nccl_sendrecv_benchmark)
+  endif()
 endif()

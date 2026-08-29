@@ -1,0 +1,36 @@
+# Condensed NCCL route evidence
+
+Source: CUDA-controller stdout artifacts named in docs/nccl.md. Process IDs are
+intentionally omitted because they are run-specific.
+
+Default, NCCL_NVB_DISABLE=0:
+
+  NCCL INFO GPU/0-2000 : ... GPU/0-84000 (3/6.0/PHB) ...
+  NCCL INFO Channel 02/1 : 0[0] -> 1[2] via P2P/direct pointer
+  NCCL INFO Channel 00 : 0[0] -> 3[3] via SHM/direct/direct
+  NCCL INFO Channel 00 : 2[1] -> 1[2] via SHM/direct/direct
+
+NVB-disabled control, NCCL_NVB_DISABLE=1:
+
+  NCCL INFO GPU/0-2000 : ... GPU/0-84000 (3/6.0/SYS) ...
+  NCCL INFO Channel 00 : 0[0] -> 3[3] via SHM/direct/direct
+  NCCL INFO Channel 00 : 2[1] -> 1[2] via SHM/direct/direct
+
+NCCL_P2P_LEVEL=PHB, NCCL_NVB_DISABLE=0:
+
+  NCCL INFO NCCL_P2P_LEVEL set by environment to PHB
+  NCCL INFO GPU/0-2000 : ... GPU/0-84000 (3/6.0/PHB) ...
+  NCCL INFO Channel 00 : 0[0] -> 3[3] via SHM/direct/direct
+  NCCL INFO Channel 00 : 2[1] -> 1[2] via SHM/direct/direct
+
+NCCL_P2P_LEVEL=PHB, NCCL_NVB_DISABLE=1:
+
+  NCCL INFO NCCL_P2P_LEVEL set by environment to PHB
+  NCCL INFO GPU/0-2000 : ... GPU/0-84000 (3/6.0/SYS) ...
+  NCCL INFO Channel 00 : 0[0] -> 3[3] via SHM/direct/direct
+  NCCL INFO Channel 00 : 2[1] -> 1[2] via SHM/direct/direct
+
+Interpretation: NVB changes NCCL's graph classification for the diagonal from
+SYS to a three-hop PHB path. The connection selected for ncclSend/ncclRecv is
+nevertheless SHM in every tested configuration. Direct carrier NVLink pairs
+select P2P/direct pointer, providing a positive control for the connection log.

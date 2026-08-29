@@ -1,0 +1,21 @@
+{
+  "schema": "numabraid-x-topology-v1",
+  "observed_at_utc": "2026-08-29T15:42:00Z",
+  "valid": true,
+  "driver_version": "580.173.02",
+  "cuda_runtime_version": 12090,
+  "cuda_driver_api_version": 13000,
+  "devices": [
+    {"cuda_device": 0, "pci_bus_id": "0000:02:00.0", "uuid": "GPU-21131915-1488-23af-38dd-1743ae1f5cc8", "numa_node": 0, "pcie_speed": "8.0 GT/s", "pcie_width": 8, "peer_access": [false, true, true, false], "nvlink_counts": [0, 0, 6, 0]},
+    {"cuda_device": 1, "pci_bus_id": "0000:03:00.0", "uuid": "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505", "numa_node": 0, "pcie_speed": "8.0 GT/s", "pcie_width": 8, "peer_access": [true, false, false, true], "nvlink_counts": [0, 0, 0, 6]},
+    {"cuda_device": 2, "pci_bus_id": "0000:83:00.0", "uuid": "GPU-d745da9c-7649-8334-41f1-483afa6f3206", "numa_node": 1, "pcie_speed": "8.0 GT/s", "pcie_width": 8, "peer_access": [true, false, false, true], "nvlink_counts": [6, 0, 0, 0]},
+    {"cuda_device": 3, "pci_bus_id": "0000:84:00.0", "uuid": "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a", "numa_node": 1, "pcie_speed": "8.0 GT/s", "pcie_width": 8, "peer_access": [false, true, true, false], "nvlink_counts": [0, 6, 0, 0]}
+  ],
+  "roles": {"A0": 0, "A1": 2, "B0": 1, "B1": 3},
+  "nvidia_smi_topology": [
+    ["X", "PHB", "NV6", "SYS"],
+    ["PHB", "X", "SYS", "NV6"],
+    ["NV6", "SYS", "X", "PHB"],
+    ["SYS", "NV6", "PHB", "X"]
+  ]
+}

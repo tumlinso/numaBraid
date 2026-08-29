@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb08-large-gpu-singles-2026-08-29",
+  "recipe": "baseline",
+  "objective": "Measure same-NUMA PCIe, explicit host-staged diagonals, unchanged numaBraid relay, and contextual stock NCCL through 12 GiB",
+  "paths": ["bench/transport", "src/forwarding", "bench/nccl"],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206",
+      "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a"
+    ],
+    "gpus": 4,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 4,
+    "ram_bytes": 4294967296
+  },
+  "correctness_argv": [
+    "/home/tumlinson/numaBraid/build-nb08/large_transfer_benchmark",
+    "--path", "host-staged",
+    "--pattern", "a0-b1",
+    "--size-bytes", "1048576",
+    "--warmups", "1",
+    "--trials", "3"
+  ],
+  "argv": ["bash", "/home/tumlinson/numaBraid/bench/transport/run_large_gpu_singles.sh"],
+  "correctness_timeout": 300,
+  "timeout": 7200,
+  "quiescence": {
+    "samples": 3,
+    "interval_seconds": 1,
+    "maximum_gpu_utilization_percent": 0
+  }
+}

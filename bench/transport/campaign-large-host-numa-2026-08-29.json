@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "project_root": "/home/tumlinson/numaBraid",
+  "campaign_id": "nb08-large-host-numa-2026-08-29",
+  "recipe": "baseline",
+  "objective": "Measure isolated NUMA0/NUMA1 host movement through 12 GiB under single and dual-flow load",
+  "paths": ["bench/transport"],
+  "resources": {
+    "gpu_uuids": [
+      "GPU-21131915-1488-23af-38dd-1743ae1f5cc8",
+      "GPU-cf22c41f-5b58-77b1-3535-8fadd1ca6505",
+      "GPU-d745da9c-7649-8334-41f1-483afa6f3206",
+      "GPU-6c1cac7f-a360-0aef-ba98-2828bfd1db1a"
+    ],
+    "gpus": 4,
+    "isolate_pcie_root": true,
+    "isolate_nvlink_domain": true,
+    "cpu_threads": 6,
+    "ram_bytes": 60129542144
+  },
+  "correctness_argv": [
+    "/home/tumlinson/numaBraid/build-nb08/numa_host_benchmark",
+    "--pattern", "0-1",
+    "--size-bytes", "268435456",
+    "--warmups", "1",
+    "--trials", "3"
+  ],
+  "argv": ["bash", "/home/tumlinson/numaBraid/bench/transport/run_large_host_numa.sh"],
+  "correctness_timeout": 300,
+  "timeout": 7200,
+  "quiescence": {
+    "samples": 3,
+    "interval_seconds": 1,
+    "maximum_gpu_utilization_percent": 0
+  }
+}

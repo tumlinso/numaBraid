@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T16:49:00Z",
+  "generated_at": "2026-08-29T18:14:27Z",
   "project": {
     "configuration": {
       "busy_timeout_ms": 5000,
@@ -18,7 +18,7 @@
     "project_uuid": "7efda1f1-7a8d-4c63-9e51-313690169d92",
     "schema_version": 2
   },
-  "project_revision": 32,
+  "project_revision": 39,
   "schema_version": 2,
   "snapshot_version": 3,
   "tables": {
@@ -357,6 +357,76 @@
         "revision": 32,
         "seq": 32,
         "timestamp": "2026-08-29T16:49:00Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "7efda1f1-7a8d-4c63-9e51-313690169d92",
+        "entity_type": "project",
+        "event_type": "plan.applied",
+        "payload_json": "{\"file\": \"/tmp/numabraid-nb08.plan.json\"}",
+        "revision": 33,
+        "seq": 33,
+        "timestamp": "2026-08-29T17:44:43Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "claim",
+        "event_type": "continue.completed",
+        "payload_json": "{\"requested_task_id\": \"NB-08\"}",
+        "revision": 34,
+        "seq": 34,
+        "timestamp": "2026-08-29T17:45:02Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "claim",
+        "event_type": "claim.pulsed",
+        "payload_json": "{}",
+        "revision": 35,
+        "seq": 35,
+        "timestamp": "2026-08-29T17:57:14Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "claim",
+        "event_type": "claim.pulsed",
+        "payload_json": "{}",
+        "revision": 36,
+        "seq": 36,
+        "timestamp": "2026-08-29T18:01:46Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "claim",
+        "event_type": "claim.pulsed",
+        "payload_json": "{}",
+        "revision": 37,
+        "seq": 37,
+        "timestamp": "2026-08-29T18:03:48Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "claim",
+        "event_type": "claim.pulsed",
+        "payload_json": "{}",
+        "revision": 38,
+        "seq": 38,
+        "timestamp": "2026-08-29T18:10:17Z"
+      },
+      {
+        "actor_session_id": null,
+        "entity_id": "NB-08",
+        "entity_type": "task",
+        "event_type": "task.completed",
+        "payload_json": "{\"completion_revision\": 39, \"disposition\": \"evaluated_not_promoted\", \"reached_checkpoints\": []}",
+        "revision": 39,
+        "seq": 39,
+        "timestamp": "2026-08-29T18:14:27Z"
       }
     ],
     "evidence": [
@@ -520,6 +590,16 @@
       }
     ],
     "handoffs": [
+      {
+        "claim_id": null,
+        "created_at": "2026-08-29T18:14:27Z",
+        "id": "1937ac19-02ba-4530-8d74-897b439b07a1",
+        "kind": "complete",
+        "note": "Completed large-transfer benchmarking through 12 GiB. Explicit host staging plateaued at 3.44 GB/s single and 6.65 GB/s for two NUMA0-origin flows; unchanged relay held 5.17 GB/s single and 8.69 GB/s dual. Host-only NUMA copy reached 8.78 GB/s single and 16.89 GB/s dual, so QPI capacity was not saturated. All 138 flow cases passed exact-byte validation; all 18,688 sampled host pages matched requested NUMA placement. QPI PMUs exist but perf access was denied. Evidence: 8f1bef77-8466-4236-ab25-049de70d9208, f1716c6e-42f4-42c9-bf9a-0783b729ad82, 57faa9b4-1a34-46a1-ac9b-d4557efd7156, e8a6197f-1a38-4dfd-9012-d2d76e78d785. Durable summary: bench/transport/results/2026-08-29-qpi-comparison-large-summary.md.",
+        "payload_json": "{\"changed_owned_paths\": [\".todo-orchestrator/state.snapshot.json\", \"bench/transport/campaign-large-gpu-contention-2026-08-29.json\", \"bench/transport/campaign-large-gpu-reverse-single-2026-08-29.json\", \"bench/transport/campaign-large-gpu-singles-2026-08-29.json\", \"bench/transport/campaign-large-host-numa-2026-08-29.json\", \"bench/transport/campaign-large-smoke-2026-08-29.json\", \"bench/transport/campaign-large-validation-2026-08-29.json\", \"bench/transport/large_nccl_benchmark.cu\", \"bench/transport/large_transfer_benchmark.cu\", \"bench/transport/numa_host_benchmark.cc\", \"bench/transport/results/2026-08-29-qpi-comparison-large-gpu-contention.jsonl\", \"bench/transport/results/2026-08-29-qpi-comparison-large-gpu-reverse-single.jsonl\", \"bench/transport/results/2026-08-29-qpi-comparison-large-gpu-single.jsonl\", \"bench/transport/results/2026-08-29-qpi-comparison-large-host-numa.jsonl\", \"bench/transport/results/2026-08-29-qpi-comparison-large-summary.md\", \"bench/transport/results/2026-08-29-qpi-comparison-large-system.json\", \"bench/transport/run_large_gpu_contention.sh\", \"bench/transport/run_large_gpu_reverse_single.sh\", \"bench/transport/run_large_gpu_singles.sh\", \"bench/transport/run_large_host_numa.sh\", \"todo-status.md\", \"todos.md\", \"todos/nb-08.md\"], \"checkpoints\": [], \"completion_commit\": \"87fb8c5eb809c5e3a13d9525e269d0e160d4fb9b\", \"completion_gates\": [], \"completion_revision\": 39, \"finalized_checkpoints\": [], \"gates\": [], \"git_diffstat\": \".todo-orchestrator/state.snapshot.json | 154 ++++++++++++++++++++++++++++++++-\\n todo-status.md                         |   3 +-\\n todos.md                               |   3 +-\\n 3 files changed, 156 insertions(+), 4 deletions(-)\", \"git_head\": \"87fb8c5eb809c5e3a13d9525e269d0e160d4fb9b\", \"interfaces\": [], \"note\": \"Completed large-transfer benchmarking through 12 GiB. Explicit host staging plateaued at 3.44 GB/s single and 6.65 GB/s for two NUMA0-origin flows; unchanged relay held 5.17 GB/s single and 8.69 GB/s dual. Host-only NUMA copy reached 8.78 GB/s single and 16.89 GB/s dual, so QPI capacity was not saturated. All 138 flow cases passed exact-byte validation; all 18,688 sampled host pages matched requested NUMA placement. QPI PMUs exist but perf access was denied. Evidence: 8f1bef77-8466-4236-ab25-049de70d9208, f1716c6e-42f4-42c9-bf9a-0783b729ad82, 57faa9b4-1a34-46a1-ac9b-d4557efd7156, e8a6197f-1a38-4dfd-9012-d2d76e78d785. Durable summary: bench/transport/results/2026-08-29-qpi-comparison-large-summary.md.\", \"resources\": [], \"task_id\": \"NB-08\"}",
+        "revision": 39,
+        "task_id": "NB-08"
+      },
       {
         "claim_id": null,
         "created_at": "2026-08-29T16:22:53Z",
@@ -919,6 +999,71 @@
         "mode": "read",
         "path": "docs",
         "task_id": "NB-07"
+      },
+      {
+        "mode": "exclusive",
+        "path": ".todo-orchestrator/state.snapshot.json",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "exclusive",
+        "path": "bench/transport",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "exclusive",
+        "path": "todo-status.md",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "exclusive",
+        "path": "todos.md",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "exclusive",
+        "path": "todos/nb-08.md",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "AGENTS.md",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "CMakeLists.txt",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "bench/forwarding",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "bench/nccl",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "docs",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "src/forwarding",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "src/topology",
+        "task_id": "NB-08"
+      },
+      {
+        "mode": "read",
+        "path": "tests/forwarding",
+        "task_id": "NB-08"
       }
     ],
     "resource_classes": [],
@@ -1454,6 +1599,31 @@
         "tags_json": "[]",
         "title": "Pipeline and tune forwarding",
         "updated_at": "2026-08-29T16:49:00Z",
+        "version": 3
+      },
+      {
+        "attention_reason": null,
+        "completion_commit": "87fb8c5eb809c5e3a13d9525e269d0e160d4fb9b",
+        "completion_git_head": "87fb8c5eb809c5e3a13d9525e269d0e160d4fb9b",
+        "completion_revision": 39,
+        "created_at": "2026-08-29T17:44:43Z",
+        "id": "NB-08",
+        "kind": "workstream",
+        "legacy_owner": null,
+        "legacy_payload_json": "{}",
+        "next_action": "",
+        "notes": "",
+        "objective": "Measure explicit NUMA-controlled host-staged GPU diagonals, isolated host inter-socket movement, and comparable numaBraid relay behavior through 12 GiB under single-flow and concurrent load without changing relay tuning or physical topology.",
+        "parallel_policy": "project_exclusive",
+        "parent_id": null,
+        "priority": 30,
+        "result": "evaluated_not_promoted",
+        "result_policy_json": "{}",
+        "revision": 39,
+        "status": "done",
+        "tags_json": "[]",
+        "title": "Characterize large host-inter-socket transport",
+        "updated_at": "2026-08-29T18:14:27Z",
         "version": 3
       }
     ],

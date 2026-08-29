@@ -3,7 +3,7 @@
 <!-- todo-orchestrator:v2-managed:start -->
 # Todo Status v2 Projection
 
-Project revision: `32`
+Project revision: `39`
 
 ## Workstreams
 - `NB-00` | status: done | execution: closed | next: Establish the compact repository, authoritative documentation, C++20 build skeleton, header compile smoke coverage, optional public module boundary, and todo-orchestrator foundation without implementing forwarding.
@@ -14,4 +14,5 @@ Project revision: `32`
 - `NB-05` | status: done | execution: closed | next: Use measured topology, transport, and NCCL evidence to select stock NCCL, narrow NCCL specialization, or a dedicated numaBraid relay.
 - `NB-06` | status: done | execution: closed | next: If and only if evidence selects a custom relay, implement the narrow X-path forwarding primitive for maximum throughput.
 - `NB-07` | status: done | execution: closed | next: Empirically tune chunking, staging, overlap, streams, events, and synchronization toward steady-state bottleneck-link throughput.
+- `NB-08` | status: done | execution: closed | next: Measure explicit NUMA-controlled host-staged GPU diagonals, isolated host inter-socket movement, and comparable numaBraid relay behavior through 12 GiB under single-flow and concurrent load without changing relay tuning or physical topology.
 <!-- todo-orchestrator:v2-managed:end -->

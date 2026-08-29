@@ -1,0 +1,63 @@
+{
+  "schema": "numabraid-qpi-comparison-large-system-v1",
+  "date_utc": "2026-08-29",
+  "maximum_requested_bytes": 12884901888,
+  "size_convention": "binary; 1 GiB = 1024^3 bytes",
+  "hardware": {
+    "cpu": "Intel Xeon E5-2698 v4, 2 sockets, 20 cores per socket",
+    "host_memory_bytes_approx": 66571993088,
+    "swap_bytes": 0,
+    "gpus": "4 x Tesla V100-SXM2-16GB",
+    "gpu_memory_total_mib_each": 16384,
+    "gpu_memory_free_mib_before_each": 16145,
+    "gpu_memory_free_mib_after_each": 16145,
+    "driver": "580.173.02",
+    "cuda_toolkit": "12.9.86",
+    "nccl": "2.29.2+cuda12.9"
+  },
+  "roles": {
+    "A0": {"cuda": 0, "pci": "0000:02:00.0", "numa": 0},
+    "B0": {"cuda": 1, "pci": "0000:03:00.0", "numa": 0},
+    "A1": {"cuda": 2, "pci": "0000:83:00.0", "numa": 1},
+    "B1": {"cuda": 3, "pci": "0000:84:00.0", "numa": 1}
+  },
+  "memory": {
+    "before_available_gib": 60,
+    "before_node0_free_mib": 29465,
+    "before_node1_free_mib": 29769,
+    "after_available_gib": 59,
+    "after_node0_free_mib": 28719,
+    "after_node1_free_mib": 29689,
+    "swap_used_bytes": 0,
+    "maximum_host_only_dual_flow_footprint_bytes": 51539607552,
+    "maximum_host_staged_pinned_footprint_bytes": 536870912,
+    "pinned_chunk_bytes": 67108864,
+    "pinned_slots_per_node_per_flow": 2
+  },
+  "placement_validation": {
+    "mechanism": "numa_alloc_onnode plus affinity-controlled first touch, verified with move_pages",
+    "host_staged_sampled_pages": 9472,
+    "host_only_sampled_pages": 9216,
+    "samples_on_requested_node": 18688,
+    "unknown_samples": 0
+  },
+  "counter_access": {
+    "qpi_pmus_exposed": ["uncore_qpi_0", "uncore_qpi_1"],
+    "imc_pmus_exposed": ["uncore_imc_0", "uncore_imc_1", "uncore_imc_4", "uncore_imc_5"],
+    "perf_event_paranoid": 1,
+    "cap_perfmon_effective": false,
+    "usable": false,
+    "failure": "perf stat denied access to performance monitoring and observability operations",
+    "system_setting_changed": false
+  },
+  "cuda_evidence": {
+    "smoke": "629620d5-7f42-42f4-af38-c8ffc51f39b8",
+    "placement_validation": "0e2813fc-9cc9-4f54-9e67-6ddab1decdf9",
+    "single_flow": "8f1bef77-8466-4236-ab25-049de70d9208",
+    "contention": "f1716c6e-42f4-42c9-bf9a-0783b729ad82",
+    "host_numa": "57faa9b4-1a34-46a1-ac9b-d4557efd7156",
+    "reverse_single": "e8a6197f-1a38-4dfd-9012-d2d76e78d785"
+  },
+  "topology_unchanged_after_campaign": true,
+  "foreign_gpu_processes_observed": false
+}
